@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Advisor - Ask Questions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <h1>Financial Advisor</h1>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Question Form -->
+            <section class="form-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-question-circle"></i> Ask Your Question</h2>
+                    </div>
+                    
+                    <form id="questionForm" class="form">
+                        <!-- Question Input -->
+                        <div class="form-group">
+                            <label for="question">
+                                <i class="fas fa-comment-dots"></i> Your Question
+                            </label>
+                            <textarea 
+                                id="question" 
+                                name="question" 
+                                rows="4" 
+                                required 
+                                placeholder="e.g., Should I invest in Reliance stock? What's the current price of TCS? I'm 30 years old and earn ₹3,00,000/month. Should I invest in HDFC Bank?"
+                            ></textarea>
+                        </div>
+
+                        <!-- Optional Investor Profile -->
+                        <div class="profile-section">
+                            <h3><i class="fas fa-user-circle"></i> Optional: Investor Profile (for personalized advice)</h3>
+                            
+                            <!-- Age -->
+                            <div class="form-group">
+                                <label for="age">
+                                    <i class="fas fa-birthday-cake"></i> Your Age (Optional)
+                                </label>
+                                <input type="number" id="age" name="age" min="18" max="100" 
+                                       placeholder="Enter your age">
+                            </div>
+
+                            <!-- Monthly Salary -->
+                            <div class="form-group">
+                                <label for="monthlySalary">
+                                    <i class="fas fa-rupee-sign"></i> Monthly Salary (INR) (Optional)
+                                </label>
+                                <input type="number" id="monthlySalary" name="monthlySalary" 
+                                       min="0" step="1000" placeholder="Enter monthly salary">
+                            </div>
+
+                            <!-- Risk Appetite -->
+                            <div class="form-group">
+                                <label for="riskAppetite">
+                                    <i class="fas fa-shield-alt"></i> Risk Appetite (Optional)
+                                </label>
+                                <select id="riskAppetite" name="riskAppetite">
+                                    <option value="">Select your risk appetite (optional)</option>
+                                    <option value="low">Low - Conservative</option>
+                                    <option value="moderate">Moderate - Balanced</option>
+                                    <option value="high-moderate">High-Moderate - Growth Oriented</option>
+                                    <option value="high">High - Aggressive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Ask Question
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-comments"></i> Answer</h2>
+                        <button class="close-btn" id="closeResults"><i class="fas fa-times"></i></button>
+                    </div>
+                    
+                    <!-- Question Asked -->
+                    <div class="question-asked" id="questionAsked"></div>
+
+                    <!-- Loading State -->
+                    <div class="loading" id="loadingState">
+                        <div class="spinner"></div>
+                        <p>Getting answer from financial advisor...</p>
+                        <small>This may take a few seconds</small>
+                    </div>
+
+                    <!-- Answer Output -->
+                    <div class="analysis-output" id="answerOutput"></div>
+
+                    <!-- Error State -->
+                    <div class="error-state" id="errorState" style="display: none;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p id="errorMessage"></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Financial Advisor. Ask questions and get personalized investment advice.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
