@@ -2,6 +2,10 @@
 
 A simple financial advisor that answers questions using AI (Groq) without PDF parsing.
 
+![Financial Advisor Interface](image.png)
+
+![Financial Advisor Analysis](image_2.png)
+
 ## Setup
 
 ### 1. Install Dependencies
@@ -90,31 +94,6 @@ model=OpenAIChat(id="gpt-4")
 **Pure LLM (no tools):**
 - Use `financial_advisor_pure` from `financial_agent.py`
 - Just AI responses, no real-time data fetching
-
-## API Endpoints
-
-### POST /api/ask
-
-Ask a financial question.
-
-**Parameters:**
-- `question` (required): Your financial question
-- `age` (optional): Your age
-- `monthly_salary` (optional): Monthly salary in INR
-- `risk_appetite` (optional): low/moderate/high-moderate/high
-
-**Example:**
-```bash
-curl -X POST "http://localhost:8000/api/ask" \
-  -F "question=What is the price of Reliance?" \
-  -F "age=30" \
-  -F "monthly_salary=300000" \
-  -F "risk_appetite=moderate"
-```
-
-### GET /api/health
-
-Check if the API is running.
 
 ## Files
 
