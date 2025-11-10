@@ -1,6 +1,6 @@
 # Financial Advisor - Simple Question-Answering System
 
-A simple financial advisor that answers questions using AI (Groq) without PDF parsing.
+A simple financial advisor that answers questions using AI Groq
 
 ![Financial Advisor Interface](image.png)
 
@@ -110,3 +110,4 @@ model=OpenAIChat(id="gpt-4")
 - "I'm 30 years old, earn ₹3,00,000/month, have moderate risk. Should I invest in HDFC Bank?"
 - "What are the analyst recommendations for Wipro?"
 - "Compare TCS and Infosys for investment"
+
